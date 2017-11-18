@@ -5,10 +5,8 @@ interface IPokemon {
   types: string[];
 }
 
-const getPokemon = async (name: string): Promise<IPokemon> => {
-  const req: Body = await fetch(
-    `${process.env.API}/pokemon/${name.toLowerCase()}`
-  );
+const getPokemon = async (arg: string | number): Promise<IPokemon> => {
+  const req: Body = await fetch(`${process.env.API}/pokemon/${arg}`);
 
   return req.json();
 };
