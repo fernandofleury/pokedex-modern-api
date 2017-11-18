@@ -1,5 +1,4 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import { GRAPHIQL, PORT } from './config';
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
@@ -20,10 +19,10 @@ app.use(
   graphqlHTTP({
     schema,
     context: { loaders },
-    graphiql: true
+    graphiql: !!GRAPHIQL
   })
 );
 
-app.listen(4000, () =>
-  process.stdout.write('Now browse to localhost:4000/graphql \n')
+app.listen(PORT, () =>
+  process.stdout.write(`Now browse to localhost:${PORT}/graphql \n`)
 );

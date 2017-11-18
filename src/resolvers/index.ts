@@ -6,7 +6,8 @@ const resolvers = {
     pokemons: pokemon.resolveMany
   },
   Pokemon: {
-    types: pokemon.resolveTypes
+    types: pokemon.resolveTypes,
+    sprites: pokemon.resolveSprites
   }
 };
 

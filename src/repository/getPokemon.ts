@@ -1,4 +1,5 @@
 import fetch, { Body } from 'node-fetch';
+import { API } from '../config';
 
 interface IPokemon {
   name: string;
@@ -6,7 +7,7 @@ interface IPokemon {
 }
 
 const getPokemon = async (arg: string | number): Promise<IPokemon> => {
-  const req: Body = await fetch(`${process.env.API}/pokemon/${arg}`);
+  const req: Body = await fetch(`${API}/pokemon/${arg}`);
 
   return req.json();
 };

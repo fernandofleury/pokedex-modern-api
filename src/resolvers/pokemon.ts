@@ -1,7 +1,5 @@
-import getPokemon from '.././repository/getPokemon';
-
-const range = (start: number, end: number): number[] =>
-  Array.from({ length: end + 1 - start }, (v, k) => k + start);
+import getPokemon from '../repository/getPokemon';
+import range from '../utils/range';
 
 interface IGetPokemon {
   name?: string;
@@ -18,6 +16,11 @@ export const resolveQuery = (obj, { name, id }: IGetPokemon, { loaders }) =>
 
 export const resolveTypes = ({ types }: { types: any[] }) =>
   types.map(data => data.type.name);
+
+export const resolveSprites = ({ sprites }) => ({
+  default: sprites.front_default,
+  shiny: sprites.front_shiny
+});
 
 export const resolveMany = (
   obj,
