@@ -1,8 +1,8 @@
-import { GRAPHIQL, PORT } from './config';
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
 import { makeExecutableSchema } from 'graphql-tools';
+import { GRAPHIQL, PORT } from './config';
 import * as loaders from './loaders';
 import resolvers from './resolvers';
 import typesDefs from './schema';
@@ -19,7 +19,7 @@ app.use(
   graphqlHTTP({
     schema,
     context: { loaders },
-    graphiql: !!GRAPHIQL
+    graphiql: GRAPHIQL
   })
 );
 
