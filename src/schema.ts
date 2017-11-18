@@ -1,6 +1,4 @@
-import { buildSchema, GraphQLSchema } from 'graphql';
-
-const schema: GraphQLSchema = buildSchema(`
+const schema: string = `
   type Pokemon {
     name: String
     types: [String]
@@ -9,6 +7,6 @@ const schema: GraphQLSchema = buildSchema(`
   type Query {
     pokemon(name: String): Pokemon
   }
-`);
+`;
 
 export default schema;
