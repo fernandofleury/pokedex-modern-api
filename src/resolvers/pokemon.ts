@@ -1,29 +1,10 @@
 import getPokemon from '../repository/getPokemon';
 import range from '../utils/range';
-
-interface IGetPokemon {
-  name?: string;
-  id?: number;
-}
-
-interface IGetPokemonMany {
-  start: number;
-  end: number;
-}
-
-export const resolveQuery = (obj, { name, id }: IGetPokemon, { loaders }) =>
-  loaders.pokemon.load(name || id);
-
-export const resolveTypes = ({ types }: { types: any[] }) =>
-  types.map(data => data.type.name);
-
-export const resolveSprites = ({ sprites }) => ({
-  default: sprites.front_default,
-  shiny: sprites.front_shiny
-});
+export const resolveQuery = (obj, { id }: { id: number }, { loaders }) =>
+  loaders.pokemon.load(id);
 
 export const resolveMany = (
   obj,
-  { start, end }: IGetPokemonMany,
+  { start, end }: { start: number; end: number },
   { loaders }
 ) => loaders.pokemon.loadMany(range(start, end));

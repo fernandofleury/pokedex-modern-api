@@ -4,10 +4,6 @@ const resolvers = {
   Query: {
     pokemon: pokemon.resolveQuery,
     pokemons: pokemon.resolveMany
-  },
-  Pokemon: {
-    types: pokemon.resolveTypes,
-    sprites: pokemon.resolveSprites
   }
 };
 

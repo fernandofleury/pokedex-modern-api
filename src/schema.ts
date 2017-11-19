@@ -13,7 +13,7 @@ const schema: string = `
   }
 
   type Query {
-    pokemon(name: String, id: Int): Pokemon
+    pokemon(id: Int): Pokemon
     pokemons(start: Int, end: Int): [Pokemon]
   }
 `;

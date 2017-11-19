@@ -2,3 +2,5 @@ node_modules/
 dist/
 coverage/
 .vscode/
+src/data/seed.json
+**/.DS_Store

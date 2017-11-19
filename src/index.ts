@@ -1,4 +1,5 @@
 import * as express from 'express';
+import * as cors from 'cors';
 import * as graphqlHTTP from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
 import { makeExecutableSchema } from 'graphql-tools';
@@ -13,6 +14,8 @@ const schema: GraphQLSchema = makeExecutableSchema({
   typeDefs: [typesDefs],
   resolvers
 });
+
+app.use(cors());
 
 app.use(
   '/graphql',
