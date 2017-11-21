@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as Dataloader from 'dataloader';
 import { SEED_LOCATION } from '../config';
-import getPokemon from '../repository/getPokemon';
 
 let localData = {};
 
@@ -17,7 +16,7 @@ const pokemonLoader = new Dataloader((ids: number[]) =>
       if (localData[id]) {
         return Promise.resolve(localData[id]);
       }
-      return getPokemon(id);
+      return Promise.reject('Pokémon not found. Did you run the seed command?');
     })
   )
 );
