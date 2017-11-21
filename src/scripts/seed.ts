@@ -2,7 +2,6 @@ import { SEED_LOCATION, SEED_REQUEST_DELAY, POKEMON_COUNT } from '../config';
 import * as fs from 'fs';
 import * as delay from 'delay';
 import getPokemon from '../repository/getPokemon';
-import range from '../utils/range';
 import { IPokemon } from '../types/pokemon';
 
 const makeRequest = async (id: number) => {
@@ -21,7 +20,7 @@ function* requestGenerator(final: number) {
 const runSeed = async () => {
   const mappedResults = {};
 
-  for (const response of requestGenerator(POKEMON_COUNT)) {
+  for (const response of requestGenerator(2)) {
     const result: IPokemon = await response;
     mappedResults[result.id] = result;
   }

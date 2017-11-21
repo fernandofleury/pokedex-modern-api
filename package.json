@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
-    "watch": "nodemon",
+    "watch": "NODE_PATH=. nodemon",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "seed": "ts-node ./src/scripts/seed.ts"
+    "seed": "NODE_PATH=. ts-node ./src/scripts/seed.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.3",
