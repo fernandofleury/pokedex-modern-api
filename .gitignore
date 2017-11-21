@@ -2,5 +2,4 @@ node_modules/
 dist/
 coverage/
 .vscode/
-src/data/data.json
 **/.DS_Store
